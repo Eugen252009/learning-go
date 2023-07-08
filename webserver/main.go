@@ -52,7 +52,7 @@ func getMovie(w http.ResponseWriter, r *http.Request) {
 			json.NewEncoder(w).Encode(item)
 		}
 	}
-	json.NewEncoder(w).Encode(movies)
+	// json.NewEncoder(w).Encode(movies)
 }
 
 func createMovie(w http.ResponseWriter, r *http.Request) {
