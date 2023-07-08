@@ -7,3 +7,5 @@ use ./mysqlbookstore
 use ./slackbot
 
 use ./slackbot-fileuploader
+
+use ./emailverification

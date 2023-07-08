@@ -15,3 +15,7 @@
 ## Project #4
 
 [Slack FileBot](slackbot-fileuploader/Readme.md)
+
+## Project #5
+
+[Email Verification](slackbot-fileuploader/Readme.md)
