@@ -7,3 +7,7 @@
 ## Project #2
 
 [MySql Bookstore](mysqlbookstore/Readme.md)
+
+## Project #3
+
+[Slack Bot](slackbot/Readme.md)
