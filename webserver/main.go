@@ -1,6 +1,15 @@
 package main
 
-type movie struct {
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/gorilla/mux"
+)
+
+type Movie struct {
 	ID       string    `json:"id"`
 	ISBN     string    `json:"isbn"`
 	Title    string    `json:"title"`
@@ -11,9 +20,40 @@ type Director struct {
 	Lastname  string `json:"lastname"`
 }
 
-var movies []movie
+var movies []Movie
 
 func main() {
 	r := mux.NewRouter()
-	r.handleFunc()
+
+	movies = append(movies, Movie{ID: "1", ISBN: "438227", Title: "Movie One", Director: &Director{Firstname: "John", Lastname: "Doe"}})
+	movies = append(movies, Movie{ID: "2", ISBN: "45455", Title: "Movie two", Director: &Director{Firstname: "Steven", Lastname: "Smith"}})
+
+	r.HandleFunc("/movies", getMovies).Methods("GET")
+	r.HandleFunc("/movies/{id}", getMovie).Methods("GET")
+	r.HandleFunc("/movies", createMovie).Methods("POST")
+	r.HandleFunc("/movies/{id}", updateMovie).Methods("PUT")
+	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
+	fmt.Printf("Starting Server on Port 8000\n")
+	log.Fatal(http.ListenAndServe(":8000", r))
+}
+
+func getMovies(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(movies)
+}
+
+func getMovie(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func createMovie(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func updateMovie(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func deleteMovie(w http.ResponseWriter, r *http.Request) {
+
 }
