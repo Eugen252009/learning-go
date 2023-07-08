@@ -5,7 +5,7 @@
 ## How to Start
 
 ```bash
-go run cmd/main.go
+go run main.go
 ```
 
 ### Get All Movies
