@@ -11,3 +11,7 @@
 ## Project #3
 
 [Slack Bot](slackbot/Readme.md)
+
+## Project #4
+
+[Slack FileBot](slackbot-fileuploader/Readme.md)
